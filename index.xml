@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mijn Wiki</title>
-    <link>https://kdbruin.github.io/</link>
+    <link>https://kdbruin.github.io/index.xml</link>
     <description>Recent content on Mijn Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -38,12 +38,12 @@ Terminal venster uit te voeren:&lt;/p&gt;
 &lt;p&gt;De volgende packages zijn handig om te installeren:&lt;/p&gt;
 
 &lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rsync&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;wget&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;python&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ant&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;node&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hugo&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;Voor het bijhouden van deze website is het nodig om ook &lt;code&gt;hugo&lt;/code&gt; te installeren.&lt;/p&gt;
 </description>
     </item>
     
