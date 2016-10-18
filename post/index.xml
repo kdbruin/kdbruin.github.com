@@ -16,12 +16,12 @@
       <pubDate>Tue, 04 Oct 2016 12:11:53 +0200</pubDate>
       
       <guid>https://kdbruin.github.io/2016/10/homebrew-package-manager/</guid>
-      <description>
-
-&lt;p&gt;Standaard worden diverse applicaties en utility programma&amp;rsquo;s geinstalleerd. Maar er
+      <description>&lt;p&gt;Standaard worden diverse applicaties en utility programma&amp;rsquo;s geinstalleerd. Maar er
 ontbreken toch nog een aantal handige programma&amp;rsquo;s, of de geinstalleerde programma&amp;rsquo;s
-zijn niet helemaal up to date. Met behulp van (Homebrew)[&lt;a href=&#34;http://brew.sh&#34;&gt;http://brew.sh&lt;/a&gt;] kunnen we
+zijn niet helemaal up to date. Met behulp van &lt;a href=&#34;http://brew.sh&#34;&gt;Homebrew&lt;/a&gt; kunnen we
 hier wat aan doen.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;installatie&#34;&gt;Installatie&lt;/h2&gt;
 
@@ -43,8 +43,7 @@ Terminal venster uit te voeren:&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;python&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Voor het bijhouden van deze website is het nodig om ook &lt;code&gt;hugo&lt;/code&gt; te installeren.&lt;/p&gt;
-</description>
+&lt;p&gt;Voor het bijhouden van deze website is het nodig om ook &lt;code&gt;hugo&lt;/code&gt; te installeren.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -53,11 +52,11 @@ Terminal venster uit te voeren:&lt;/p&gt;
       <pubDate>Sun, 25 Sep 2016 18:12:40 +0200</pubDate>
       
       <guid>https://kdbruin.github.io/2016/09/macos-sierra-installatie-usb-stick/</guid>
-      <description>
-
-&lt;h2 id=&#34;download-de-macos-installer&#34;&gt;Download de macOS installer&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;download-de-macos-installer&#34;&gt;Download de macOS installer&lt;/h2&gt;
 
 &lt;p&gt;Via de Mac App Store moet je eerst het installatie programma van macOS Sierra downloaden. Wanneer de download klaar is, zal het installatie programma automatisch opstarten. Stop nu het installatie programma voordat je verder gaat.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;voorbereiden-usb-stick&#34;&gt;Voorbereiden USB stick&lt;/h2&gt;
 
@@ -86,8 +85,7 @@ Terminal venster uit te voeren:&lt;/p&gt;
 &lt;li&gt;Start een schone installatie&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Bron: &lt;a href=&#34;https://www.appletips.nl/bootable-usb-stick-macos-sierra/&#34;&gt;macOS Sierra: Een installatie USB stick maken&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;Bron: &lt;a href=&#34;https://www.appletips.nl/bootable-usb-stick-macos-sierra/&#34;&gt;macOS Sierra: Een installatie USB stick maken&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
