@@ -2,13 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mijn Wiki</title>
-    <link>https://kdbruin.github.io/</link>
+    <link>https://kdbruin.github.io/index.xml</link>
     <description>Recent content on Mijn Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 25 Sep 2016 20:43:28 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 04 Oct 2016 12:11:53 +0200</lastBuildDate>
     <atom:link href="https://kdbruin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Homebrew Package Manager</title>
+      <link>https://kdbruin.github.io/2016/10/2016-10-04-homebrew-package-manager/</link>
+      <pubDate>Tue, 04 Oct 2016 12:11:53 +0200</pubDate>
+      
+      <guid>https://kdbruin.github.io/2016/10/2016-10-04-homebrew-package-manager/</guid>
+      <description>&lt;p&gt;Although macOS comes with a large array of applications and utility programs, several essential developer tools are missing or out of date. Several solutions exist to remedy this and I prefer to use &lt;a href=&#34;http://brew.sh&#34;&gt;Homebrew&lt;/a&gt; to add those programs to the system.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;Installation of Homebrew is very simple. Just execute the following command in a Terminal window:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Follow the directions on the screen and the Homebrew package manager will be installed.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-packages-to-install&#34;&gt;What packages to install?&lt;/h2&gt;
+
+&lt;p&gt;At least the following packages need to be installed:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rsync&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wget&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;python&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To keep this website up to date it is also necessary to install the &lt;code&gt;hugo&lt;/code&gt; package.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>contact</title>
@@ -31,56 +63,57 @@
     </item>
     
     <item>
-      <title>macOS Sierra Installatie USB Stick</title>
-      <link>https://kdbruin.github.io/2016/09/macos-sierra-installatie-usb-stick/</link>
+      <title>macOS Sierra Installation USB Stick</title>
+      <link>https://kdbruin.github.io/2016/09/2016-09-25-macos-sierra-installation-usb-stick/</link>
       <pubDate>Sun, 25 Sep 2016 18:12:40 +0200</pubDate>
       
-      <guid>https://kdbruin.github.io/2016/09/macos-sierra-installatie-usb-stick/</guid>
-      <description>
+      <guid>https://kdbruin.github.io/2016/09/2016-09-25-macos-sierra-installation-usb-stick/</guid>
+      <description>&lt;p&gt;Having a bootable USB stick with the latest operating system installer ready makes system maintenance a lot easier. Installation on multiple computers requires only a single download of the installer and also a clean install is much easier to perform. In this article I describe how you can create such a bootable USB stick.&lt;/p&gt;
 
-&lt;h2 id=&#34;download-de-macos-installer&#34;&gt;Download de macOS installer&lt;/h2&gt;
+&lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;Via de Mac App Store moet je eerst het installatie programma van macOS Sierra downloaden. Wanneer de download klaar is, zal het installatie programma automatisch opstarten. Stop nu het installatie programma voordat je verder gaat.&lt;/p&gt;
+&lt;h2 id=&#34;download-the-macos-installer&#34;&gt;Download the macOS installer&lt;/h2&gt;
 
-&lt;h2 id=&#34;voorbereiden-usb-stick&#34;&gt;Voorbereiden USB stick&lt;/h2&gt;
+&lt;p&gt;First download the macOS Sierra Installer from the Mac App Store. When the download is finished the installer will start automatically. Just quit the installation before continuing.&lt;/p&gt;
 
-&lt;p&gt;De USB stick moet minimaal 8GB groot zijn. Plaats de USB stick in de computer en gebruik Disk Utility om deze te formatteren en een naam te geven, bijvoorbeeld &amp;ldquo;Install macOS Sierra&amp;rdquo;.&lt;/p&gt;
+&lt;h2 id=&#34;prepare-the-usb-stick&#34;&gt;Prepare the USB stick&lt;/h2&gt;
 
-&lt;h2 id=&#34;macos-sierra-bootable-usb-stick-maken&#34;&gt;macOS Sierra bootable USB stick maken&lt;/h2&gt;
+&lt;p&gt;The minimal required size of the USB stick is 8GB. Plug the USB stick into the computer and use Disk Utility to format and name the stick. In this example we will be using &amp;ldquo;os-install&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;Gebruik het volgende commando (op 1 regel) om het installatie programma op de USB stick te plaatsen:&lt;/p&gt;
+&lt;h2 id=&#34;create-the-macos-sierra-bootable-usb-stick&#34;&gt;Create the macOS Sierra bootable USB stick&lt;/h2&gt;
+
+&lt;p&gt;Open a Terminal window and use the following command (on a single line) to place the installation program on the USB stick:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia
-        --volume /Volumes/Install\ macOS\ Sierra
+        --volume /Volumes/os-install
         --applicationpath /Applications/Install\ macOS\ Sierra.app
         --nointeraction
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Wanneer dit allemaal afgerond is, is de bootable USB stick met macOS Sierra beschikbaar. In de Finder zie je de stick als &amp;ldquo;Install macOS Sierra&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;When the process is finished the bootable USB stick with the macOS Sierra installer is ready to use. In Finder the USB stick will be identified as &amp;ldquo;Install macOS Sierra&amp;rdquo;.&lt;/p&gt;
 
-&lt;h2 id=&#34;installatie-starten&#34;&gt;Installatie starten&lt;/h2&gt;
+&lt;h2 id=&#34;start-the-installation&#34;&gt;Start the installation&lt;/h2&gt;
 
-&lt;p&gt;Om een schone installatie te doen, voer je de volgende stappen uit:&lt;/p&gt;
+&lt;p&gt;To perform a clean install execute the following steps:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Plaats de USB stick in de computer&lt;/li&gt;
-&lt;li&gt;Start de computer op en houd de &lt;span class=&#34;key&#34;&gt;option&lt;/span&gt; toets ingedrukt&lt;/li&gt;
-&lt;li&gt;Kies vervolgens de bootable USB stick om het system te starten&lt;/li&gt;
-&lt;li&gt;Start een schone installatie&lt;/li&gt;
+&lt;li&gt;Place the USB stick in the computer to update&lt;/li&gt;
+&lt;li&gt;Start the computer keep the &lt;span class=&#34;key&#34;&gt;option&lt;/span&gt; key pressed&lt;/li&gt;
+&lt;li&gt;Choose the bootable USB stick to start the system&lt;/li&gt;
+&lt;li&gt;Choose a clean install&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Bron: &lt;a href=&#34;https://www.appletips.nl/bootable-usb-stick-macos-sierra/&#34;&gt;macOS Sierra: Een installatie USB stick maken&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;Source (in Dutch): &lt;a href=&#34;https://www.appletips.nl/bootable-usb-stick-macos-sierra/&#34;&gt;macOS Sierra: Een installatie USB stick maken&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Welkom</title>
-      <link>https://kdbruin.github.io/2016/09/welkom/</link>
+      <title>Welcome</title>
+      <link>https://kdbruin.github.io/2016/09/2016-09-25-welcome/</link>
       <pubDate>Sun, 25 Sep 2016 17:44:05 +0200</pubDate>
       
-      <guid>https://kdbruin.github.io/2016/09/welkom/</guid>
-      <description>&lt;p&gt;Welkom op mijn persoonlijke Wiki. Hier vind je van alles en nog wat over software
-ontwikkeling, system installaties, etc.&lt;/p&gt;
+      <guid>https://kdbruin.github.io/2016/09/2016-09-25-welcome/</guid>
+      <description>&lt;p&gt;Welcome to my personal Wiki. Here you will find lots of stuff about software development,
+operating systems, and other stuff that is of interest to me.&lt;/p&gt;
 </description>
     </item>
     

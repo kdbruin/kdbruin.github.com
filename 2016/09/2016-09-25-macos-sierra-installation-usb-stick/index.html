@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.17" />
 
-  <title>Tags &middot; Mijn Wiki</title>
+  <title>macOS Sierra Installation USB Stick &middot; Mijn Wiki</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="Mijn Wiki" href="https://kdbruin.github.io/tags/index.xml" />
   
 
   
@@ -103,10 +101,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://kdbruin.github.io/tags/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -200,13 +194,124 @@
 
 
 <div class="header">
-  <h1>Tags</h1>
+  <h1>macOS Sierra Installation USB Stick</h1>
+  <h2></h2>
 </div>
 <div class="content">
-  <ul>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>25 Sep 2016, 18:12</time>
+  </div>
+
+  
+
   
   
-  </ul>
+  
+  
+
+  
+  
+  
+  
+
+</div>
+  
+    
+    <div class="post-series-header">
+        Series: <a href="https://kdbruin.github.io/series/macos-sierra/">macOS Sierra</a>
+    </div>
+ 
+
+  <p>Having a bootable USB stick with the latest operating system installer ready makes system maintenance a lot easier. Installation on multiple computers requires only a single download of the installer and also a clean install is much easier to perform. In this article I describe how you can create such a bootable USB stick.</p>
+
+<p></p>
+
+<h2 id="download-the-macos-installer">Download the macOS installer</h2>
+
+<p>First download the macOS Sierra Installer from the Mac App Store. When the download is finished the installer will start automatically. Just quit the installation before continuing.</p>
+
+<h2 id="prepare-the-usb-stick">Prepare the USB stick</h2>
+
+<p>The minimal required size of the USB stick is 8GB. Plug the USB stick into the computer and use Disk Utility to format and name the stick. In this example we will be using &ldquo;os-install&rdquo;.</p>
+
+<h2 id="create-the-macos-sierra-bootable-usb-stick">Create the macOS Sierra bootable USB stick</h2>
+
+<p>Open a Terminal window and use the following command (on a single line) to place the installation program on the USB stick:</p>
+
+<pre><code>sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia
+        --volume /Volumes/os-install
+        --applicationpath /Applications/Install\ macOS\ Sierra.app
+        --nointeraction
+</code></pre>
+
+<p>When the process is finished the bootable USB stick with the macOS Sierra installer is ready to use. In Finder the USB stick will be identified as &ldquo;Install macOS Sierra&rdquo;.</p>
+
+<h2 id="start-the-installation">Start the installation</h2>
+
+<p>To perform a clean install execute the following steps:</p>
+
+<ul>
+<li>Place the USB stick in the computer to update</li>
+<li>Start the computer keep the <span class="key">option</span> key pressed</li>
+<li>Choose the bootable USB stick to start the system</li>
+<li>Choose a clean install</li>
+</ul>
+
+<p>Source (in Dutch): <a href="https://www.appletips.nl/bootable-usb-stick-macos-sierra/">macOS Sierra: Een installatie USB stick maken</a></p>
+
+  
+    
+    <div class="post-series-footer">
+    	<p><a href="" id="series"></a>Dit is een bericht uit de	<b>macOS Sierra</b> serie:</p>
+
+        
+        
+        <ul class="series">
+        
+    	    <li><a href="https://kdbruin.github.io/2016/09/2016-09-25-macos-sierra-installation-usb-stick/">macOS Sierra Installation USB Stick</a></li>
+        
+        </ul>
+    </div>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://kdbruin.github.io/2016/09/2016-09-25-welcome/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://kdbruin.github.io/2016/09/2016-09-25-welcome/">Welcome</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://kdbruin.github.io/2016/10/2016-10-04-homebrew-package-manager/">Homebrew Package Manager</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://kdbruin.github.io/2016/10/2016-10-04-homebrew-package-manager/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
 </div>
 
 </div>
@@ -218,3 +323,4 @@
 
 </body>
 </html>
+
