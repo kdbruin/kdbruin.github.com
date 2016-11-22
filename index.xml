@@ -405,7 +405,7 @@ MAILTO=user@example.com
 &lt;p&gt;At least the following packages need to be installed:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;rsync&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;homebrew/dupes/rsync&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;wget&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;python&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
