@@ -7,8 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 23 Oct 2016 10:59:52 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 22 Nov 2016 19:43:22 +0100</lastBuildDate>
     <atom:link href="https://kdbruin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Software Archive</title>
+      <link>https://kdbruin.github.io/software/</link>
+      <pubDate>Tue, 22 Nov 2016 19:43:22 +0100</pubDate>
+      
+      <guid>https://kdbruin.github.io/software/</guid>
+      <description>
+
+&lt;p&gt;This page contains a list of software titles I&amp;rsquo;m using regularly on either my desktop or server machines. Each title links to the relevant download page and possibly some additional installation instructions.&lt;/p&gt;
+
+&lt;h2 id=&#34;graphics-software&#34;&gt;Graphics software&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://helpx.adobe.com/nl/x-productkb/policy-pricing/cs6-product-downloads.html&#34;&gt;Adobe Photoshop CS6&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to install the application on macOS Sierra the following steps are required:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Open the downloaded disk image&lt;/li&gt;
+&lt;li&gt;Open &amp;ldquo;Adobe Phtotoshop CS6&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Open the context menu for &amp;ldquo;Install.app&amp;rdquo; and select &amp;ldquo;Show Package Content&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Browse to &amp;ldquo;Contents/MacOS&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Run the &amp;ldquo;Install&amp;rdquo; program&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/nl/app/affinity-designer/id824171161?l=en&amp;amp;mt=12&#34;&gt;Affinity Designer&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/nl/app/affinity-photo/id824183456?l=en&amp;amp;mt=12&#34;&gt;Affinity Photo&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Rsync Backup</title>
