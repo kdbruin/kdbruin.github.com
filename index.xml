@@ -7,8 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 22 Nov 2016 19:43:22 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 28 Nov 2016 20:03:26 +0100</lastBuildDate>
     <atom:link href="https://kdbruin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Setting JAVA_HOME Environment Variable</title>
+      <link>https://kdbruin.github.io/2016/11/2016-11-28-setting-java-home/</link>
+      <pubDate>Mon, 28 Nov 2016 20:03:26 +0100</pubDate>
+      
+      <guid>https://kdbruin.github.io/2016/11/2016-11-28-setting-java-home/</guid>
+      <description>&lt;p&gt;When using Java GUI applications it is necessary to set the &lt;code&gt;JAVA_HOME&lt;/code&gt; environment variable. However, when added to either &lt;code&gt;~/.profile&lt;/code&gt; or &lt;code&gt;~/.bash_profile&lt;/code&gt;, this setting will not be used for GUI applications unless started from a Terminal window.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;To set the &lt;code&gt;JAVA_HOME&lt;/code&gt; environment variable we need to add a LaunchAgent file to start a simple shell script when a user logs in. Place the following lines in &lt;code&gt;~/Library/LaunchAgents/com.user.loginscript.plist&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;!DOCTYPE plist PUBLIC &amp;quot;-//Apple Computer//DTD PLIST 1.0//EN&amp;quot; &amp;quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;quot;&amp;gt;
+&amp;lt;plist version=&amp;quot;1.0&amp;quot;&amp;gt;
+&amp;lt;dict&amp;gt;
+   &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt;
+   &amp;lt;string&amp;gt;com.user.loginscript&amp;lt;/string&amp;gt;
+   &amp;lt;key&amp;gt;Program&amp;lt;/key&amp;gt;
+   &amp;lt;string&amp;gt;/path/to/executable/script&amp;lt;/string&amp;gt;
+   &amp;lt;key&amp;gt;RunAtLoad&amp;lt;/key&amp;gt;
+   &amp;lt;true/&amp;gt;
+&amp;lt;/dict&amp;gt;
+&amp;lt;/plist&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the file change &lt;code&gt;/path/to/executable/script&lt;/code&gt; to the actual startup script. In this script place the following lines:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Set JAVA_HOME is Java is installed
+if [ -x /usr/libexec/java_home ]; then
+  launchctl setenv JAVA_HOME &amp;quot;$(/usr/libexec/java_home)&amp;quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Make sure the file is executable.&lt;/p&gt;
+
+&lt;p&gt;After the user logs out and in again, open a Terminal window and use&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo $JAVA_HOME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;to check that the environment variable is set.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Software Archive</title>

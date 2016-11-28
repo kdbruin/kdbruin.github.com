@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.17" />
 
-  <title>Mijn Wiki</title>
+  <title>Setting JAVA_HOME Environment Variable &middot; Mijn Wiki</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="Mijn Wiki" href="https://kdbruin.github.io/index.xml" />
   
 
   
@@ -109,10 +107,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://kdbruin.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -206,17 +200,12 @@
 
 
 <div class="header">
-  <h1>Mijn Wiki</h1>
+  <h1>Setting JAVA_HOME Environment Variable</h1>
   <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://kdbruin.github.io/2016/11/2016-11-28-setting-java-home/">Setting JAVA_HOME Environment Variable</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -236,178 +225,74 @@
   
 
 </div>
+   
 
-  </header>
-
-  <p>
   <p>When using Java GUI applications it is necessary to set the <code>JAVA_HOME</code> environment variable. However, when added to either <code>~/.profile</code> or <code>~/.bash_profile</code>, this setting will not be used for GUI applications unless started from a Terminal window.</p>
 
 <p></p>
-  </p>
+
+<p>To set the <code>JAVA_HOME</code> environment variable we need to add a LaunchAgent file to start a simple shell script when a user logs in. Place the following lines in <code>~/Library/LaunchAgents/com.user.loginscript.plist</code>:</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple Computer//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+   &lt;key&gt;Label&lt;/key&gt;
+   &lt;string&gt;com.user.loginscript&lt;/string&gt;
+   &lt;key&gt;Program&lt;/key&gt;
+   &lt;string&gt;/path/to/executable/script&lt;/string&gt;
+   &lt;key&gt;RunAtLoad&lt;/key&gt;
+   &lt;true/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre>
+
+<p>In the file change <code>/path/to/executable/script</code> to the actual startup script. In this script place the following lines:</p>
+
+<pre><code># Set JAVA_HOME is Java is installed
+if [ -x /usr/libexec/java_home ]; then
+  launchctl setenv JAVA_HOME &quot;$(/usr/libexec/java_home)&quot;
+fi
+</code></pre>
+
+<p>Make sure the file is executable.</p>
+
+<p>After the user logs out and in again, open a Terminal window and use</p>
+
+<pre><code>echo $JAVA_HOME
+</code></pre>
+
+<p>to check that the environment variable is set.</p>
 
   
-  <footer>
-    <a href="https://kdbruin.github.io/2016/11/2016-11-28-setting-java-home/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
   
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://kdbruin.github.io/2016/10/2016-10-23-rsync-backup/">Rsync Backup</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>23 Oct 2016, 10:59</time>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://kdbruin.github.io/2016/10/2016-10-23-rsync-backup/"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
-
-  
-
-  
-  
-  
-  
-
-  
-  
-  
-  
-
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://kdbruin.github.io/2016/10/2016-10-23-rsync-backup/">Rsync Backup</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
 
-  <p>
-  <p>Having a proper backup of your work is essential. Although every OS X and macOS system comes with Time Machine this is not always the best solution. In this article we describe how we can use rsync to create a backup.</p>
-
-<p></p>
-  </p>
 
   
-  <footer>
-    <a href="https://kdbruin.github.io/2016/10/2016-10-23-rsync-backup/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://kdbruin.github.io/2016/10/2016-10-04-homebrew-package-manager/">Homebrew Package Manager</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>04 Oct 2016, 12:11</time>
-  </div>
-
-  
-
-  
-  
-  
-  
-
-  
-  
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  <p>Although macOS comes with a large array of applications and utility programs, several essential developer tools are missing or out of date. Several solutions exist to remedy this and I prefer to use <a href="http://brew.sh">Homebrew</a> to add those programs to the system.</p>
-
-<p></p>
-  </p>
-
-  
-  <footer>
-    <a href="https://kdbruin.github.io/2016/10/2016-10-04-homebrew-package-manager/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://kdbruin.github.io/2016/09/2016-09-25-macos-sierra-installation-usb-stick/">macOS Sierra Installation USB Stick</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>25 Sep 2016, 18:12</time>
-  </div>
-
-  
-
-  
-  
-  
-  
-
-  
-  
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  <p>Having a bootable USB stick with the latest operating system installer ready makes system maintenance a lot easier. Installation on multiple computers requires only a single download of the installer and also a clean install is much easier to perform. In this article I describe how you can create such a bootable USB stick.</p>
-
-<p></p>
-  </p>
-
-  
-  <footer>
-    <a href="https://kdbruin.github.io/2016/09/2016-09-25-macos-sierra-installation-usb-stick/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://kdbruin.github.io/2016/09/2016-09-25-welcome/">Welcome</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>25 Sep 2016, 17:44</time>
-  </div>
-
-  
-
-  
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Welcome to my personal Wiki. Here you will find lots of stuff about software development, operating systems, and other stuff that is of interest to me.
-  </p>
-
-  
-</article>
-
-  
-
-  
-
 
 </div>
 
