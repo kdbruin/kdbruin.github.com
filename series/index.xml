@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on Mijn Wiki</title>
+    <link>https://kdbruin.github.io/series/</link>
+    <description>Recent content in Series on Mijn Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016-2017. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 25 Sep 2016 18:12:40 +0200</lastBuildDate>
+    
+	<atom:link href="https://kdbruin.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Macos Sierra</title>
+      <link>https://kdbruin.github.io/series/macos-sierra/</link>
+      <pubDate>Sun, 25 Sep 2016 18:12:40 +0200</pubDate>
+      
+      <guid>https://kdbruin.github.io/series/macos-sierra/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

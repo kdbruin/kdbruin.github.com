@@ -2,13 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mijn Wiki</title>
-    <link>https://kdbruin.github.io/index.xml</link>
+    <link>https://kdbruin.github.io/</link>
     <description>Recent content on Mijn Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <copyright>&amp;copy; 2016-2017. All rights reserved.</copyright>
     <lastBuildDate>Mon, 28 Nov 2016 20:03:26 +0100</lastBuildDate>
-    <atom:link href="https://kdbruin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://kdbruin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Setting JAVA_HOME Environment Variable</title>
@@ -18,40 +20,7 @@
       <guid>https://kdbruin.github.io/2016/11/2016-11-28-setting-java-home/</guid>
       <description>&lt;p&gt;When using Java GUI applications it is necessary to set the &lt;code&gt;JAVA_HOME&lt;/code&gt; environment variable. However, when added to either &lt;code&gt;~/.profile&lt;/code&gt; or &lt;code&gt;~/.bash_profile&lt;/code&gt;, this setting will not be used for GUI applications unless started from a Terminal window.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;To set the &lt;code&gt;JAVA_HOME&lt;/code&gt; environment variable we need to add a LaunchAgent file to start a simple shell script when a user logs in. Place the following lines in &lt;code&gt;~/Library/LaunchAgents/com.user.loginscript.plist&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
-&amp;lt;!DOCTYPE plist PUBLIC &amp;quot;-//Apple Computer//DTD PLIST 1.0//EN&amp;quot; &amp;quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;quot;&amp;gt;
-&amp;lt;plist version=&amp;quot;1.0&amp;quot;&amp;gt;
-&amp;lt;dict&amp;gt;
-   &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt;
-   &amp;lt;string&amp;gt;com.user.loginscript&amp;lt;/string&amp;gt;
-   &amp;lt;key&amp;gt;Program&amp;lt;/key&amp;gt;
-   &amp;lt;string&amp;gt;/path/to/executable/script&amp;lt;/string&amp;gt;
-   &amp;lt;key&amp;gt;RunAtLoad&amp;lt;/key&amp;gt;
-   &amp;lt;true/&amp;gt;
-&amp;lt;/dict&amp;gt;
-&amp;lt;/plist&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In the file change &lt;code&gt;/path/to/executable/script&lt;/code&gt; to the actual startup script. In this script place the following lines:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Set JAVA_HOME is Java is installed
-if [ -x /usr/libexec/java_home ]; then
-  launchctl setenv JAVA_HOME &amp;quot;$(/usr/libexec/java_home)&amp;quot;
-fi
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Make sure the file is executable.&lt;/p&gt;
-
-&lt;p&gt;After the user logs out and in again, open a Terminal window and use&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;echo $JAVA_HOME
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;to check that the environment variable is set.&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -60,30 +29,10 @@ fi
       <pubDate>Tue, 22 Nov 2016 19:43:22 +0100</pubDate>
       
       <guid>https://kdbruin.github.io/software/</guid>
-      <description>
-
-&lt;p&gt;This page contains a list of software titles I&amp;rsquo;m using regularly on either my desktop or server machines. Each title links to the relevant download page and possibly some additional installation instructions.&lt;/p&gt;
-
-&lt;h2 id=&#34;graphics-software&#34;&gt;Graphics software&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://helpx.adobe.com/nl/x-productkb/policy-pricing/cs6-product-downloads.html&#34;&gt;Adobe Photoshop CS6&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;In order to install the application on macOS Sierra the following steps are required:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Open the downloaded disk image&lt;/li&gt;
-&lt;li&gt;Open &amp;ldquo;Adobe Phtotoshop CS6&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Open the context menu for &amp;ldquo;Install.app&amp;rdquo; and select &amp;ldquo;Show Package Content&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Browse to &amp;ldquo;Contents/MacOS&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Run the &amp;ldquo;Install&amp;rdquo; program&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/nl/app/affinity-designer/id824171161?l=en&amp;amp;mt=12&#34;&gt;Affinity Designer&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/nl/app/affinity-photo/id824183456?l=en&amp;amp;mt=12&#34;&gt;Affinity Photo&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>This page contains a list of software titles I&amp;rsquo;m using regularly on either my desktop or server machines. Each title links to the relevant download page and possibly some additional installation instructions.
+Graphics software  Adobe Photoshop CS6
+In order to install the application on macOS Sierra the following steps are required:
+ Open the downloaded disk image Open &amp;ldquo;Adobe Phtotoshop CS6&amp;rdquo; Open the context menu for &amp;ldquo;Install.app&amp;rdquo; and select &amp;ldquo;Show Package Content&amp;rdquo; Browse to &amp;ldquo;Contents/MacOS&amp;rdquo; Run the &amp;ldquo;Install&amp;rdquo; program  Affinity Designer</description>
     </item>
     
     <item>
@@ -94,367 +43,7 @@ fi
       <guid>https://kdbruin.github.io/2016/10/2016-10-23-rsync-backup/</guid>
       <description>&lt;p&gt;Having a proper backup of your work is essential. Although every OS X and macOS system comes with Time Machine this is not always the best solution. In this article we describe how we can use rsync to create a backup.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;why-rsync&#34;&gt;Why rsync?&lt;/h2&gt;
-
-&lt;p&gt;As I want to store the backups on my NAS running FreeBSD I need to be able to transfer the files between both systems. It is possible to use Time Machine over AFP, NFS or Samba but after playing with this I found it slow and cumbersome. So I started looking for another solution and found &lt;a href=&#34;http://www.rsnapshot.org&#34;&gt;rsnapshot&lt;/a&gt; that uses rsync underneath to handle all stuff.&lt;/p&gt;
-
-&lt;h2 id=&#34;running-the-rsync-daemon&#34;&gt;Running the rsync daemon&lt;/h2&gt;
-
-&lt;p&gt;Using this set of tools requires that the Mac system has a running rsync daemon. As I don&amp;rsquo;t have the Server extension I needed to set this up myself. After some searching the web I found a nice solution at &lt;a href=&#34;http://bahut.alma.ch/2013/01/rsync-server-daemon-on-mac-os-x.html&#34;&gt;http://bahut.alma.ch/2013/01/rsync-server-daemon-on-mac-os-x.html&lt;/a&gt;. Based on this I created the following file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
-&amp;lt;!DOCTYPE plist PUBLIC &amp;quot;-//Apple Computer//DTD PLIST 1.0//EN&amp;quot; &amp;quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;quot;&amp;gt;
-&amp;lt;plist version=&amp;quot;1.0&amp;quot;&amp;gt;
-&amp;lt;dict&amp;gt;
-        &amp;lt;key&amp;gt;Disabled&amp;lt;/key&amp;gt;
-        &amp;lt;false/&amp;gt;
-        &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt;
-        &amp;lt;string&amp;gt;rsync&amp;lt;/string&amp;gt;
-        &amp;lt;key&amp;gt;Program&amp;lt;/key&amp;gt;
-        &amp;lt;string&amp;gt;/usr/local/bin/rsync&amp;lt;/string&amp;gt;
-        &amp;lt;key&amp;gt;ProgramArguments&amp;lt;/key&amp;gt;
-        &amp;lt;array&amp;gt;
-                &amp;lt;string&amp;gt;/usr/local/bin/rsync&amp;lt;/string&amp;gt;
-                &amp;lt;string&amp;gt;--daemon&amp;lt;/string&amp;gt;
-                &amp;lt;string&amp;gt;--config=/usr/local/etc/rsyncd.conf&amp;lt;/string&amp;gt;
-        &amp;lt;/array&amp;gt;
-        &amp;lt;key&amp;gt;inetdCompatibility&amp;lt;/key&amp;gt;
-        &amp;lt;dict&amp;gt;
-                &amp;lt;key&amp;gt;Wait&amp;lt;/key&amp;gt;
-                &amp;lt;false/&amp;gt;
-        &amp;lt;/dict&amp;gt;
-        &amp;lt;key&amp;gt;Sockets&amp;lt;/key&amp;gt;
-        &amp;lt;dict&amp;gt;
-                &amp;lt;key&amp;gt;Listeners&amp;lt;/key&amp;gt;
-                &amp;lt;dict&amp;gt;
-                        &amp;lt;key&amp;gt;SockServiceName&amp;lt;/key&amp;gt;
-                        &amp;lt;string&amp;gt;rsync&amp;lt;/string&amp;gt;
-                        &amp;lt;key&amp;gt;SockType&amp;lt;/key&amp;gt;
-                        &amp;lt;string&amp;gt;stream&amp;lt;/string&amp;gt;
-                &amp;lt;/dict&amp;gt;
-        &amp;lt;/dict&amp;gt;
-&amp;lt;/dict&amp;gt;
-&amp;lt;/plist&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This will start the rsync daemon at system startup. Place this file in the &lt;code&gt;/Library/LaunchDaemons&lt;/code&gt; directory as e.g. &lt;code&gt;org.samba.rsync.plist&lt;/code&gt; and set the correct permissions on the file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;% sudo cp ~/rsync.plist /Library/LaunchDaemons/org.samba.rsync.plist
-% sudo chmod 644 /Library/LaunchDaemons/org.samba.rsync.plist
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The configuration of the rsync daemon is placed in &lt;code&gt;/usr/local/etc/rsyncd.conf&lt;/code&gt;. Here I define the rsync names for the locations I want to backup:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[kdb]
-        path = /Users/kdb
-        hosts allow = 172.16.123.0/24
-        uid = kdb
-        gid = staff
-        read only = false
-        comment = My home
-
-[usb]
-        path = /Volumes/Offline Backup
-        hosts allow = 172.16.123.0/24
-        uid = kdb
-        gid = staff
-        read only = false
-        comment = USB Backup Disk
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note that security is just on the network level but could be changed to something more secure. For my situation this is sufficient.&lt;/p&gt;
-
-&lt;p&gt;Install the rsync daemon using the following commands in a Terminal window:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;% sudo launchctl load /Library/LaunchDaemons/org.samba.rsync.plist
-% sudo launchctl start org.samba.rsync
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This will load and start the rsync daemon. To see if the daemon is running, use the following commands:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;% launchctl list | grep rsync
--   0   org.samba.rsync
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To remove the rsync daemon:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;% sudo launchctl unload /Library/LaunchDaemons/org.samba.rsync.plist
-% sudo killall rsync
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;setting-up-the-freebsd-server&#34;&gt;Setting up the FreeBSD server&lt;/h2&gt;
-
-&lt;p&gt;On the FreeBSD server as &lt;code&gt;root&lt;/code&gt; add a dedicated user and group for the backup process:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;% su -
-$ pw groupadd timemachine
-$ pw useradd timemachine -g timemachine -d /vault/timemachine -m -s /usr/sbin/nologin
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This will add a user and group &lt;code&gt;timemachine&lt;/code&gt; with a home directory set but no login shell. Next, login as the new user and create the necessary directories:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ su -m timemachine
-timemachine% cd /vault/timemachine
-timemachine% mkdir bin etc logs snapshots
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;ssh-keys&#34;&gt;SSH keys&lt;/h3&gt;
-
-&lt;p&gt;For proper authentication and encryption rsnapshot uses SSH so we need to create the proper keys:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;timemachine% ssh-keygen -t rsa
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Leave the passphrase empty so only the SSH key is used for authentication. Now copy the generated public key to the machines that need to be backed up. Use the &lt;code&gt;ssh-copy-id&lt;/code&gt; utility for this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;timemachine% ssh-copy-id /vault/timemachine/.ssh/id_rsa.pub kdb@172.16.123.7
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;When prompted supply the password for the remote user. This will add the public key to the &lt;code&gt;authorized_keys&lt;/code&gt; file on the remote system.&lt;/p&gt;
-
-&lt;h3 id=&#34;rsnapshot&#34;&gt;rsnapshot&lt;/h3&gt;
-
-&lt;p&gt;For each machine to backup I created a configuration file. For example for my iMac I created &lt;code&gt;etc/rsnapshot-imac.conf&lt;/code&gt; with the following content:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;config_version  1.2
-snapshot_root   /vault/timemachine/snapshots/imac
-
-cmd_cp          /usr/local/bin/gcp
-cmd_rm          /usr/local/bin/grm
-cmd_rsync       /usr/local/bin/rsync
-cmd_ssh         /usr/bin/ssh
-cmd_logger      /usr/bin/logger
-
-retain          daily   14
-#retain         daily   7
-#retain         weekly  4
-#retain         monthly 3
-
-link_dest       1
-# sync_first    1
-
-verbose         2
-loglevel        3
-logfile         /vault/timemachine/logs/rsnapshot-imac.log
-lockfile        /vault/timemachine/rsnapshot-imac.pid
-
-exclude_file    /vault/timemachine/etc/excludes-imac.conf
-
-backup          rsync://172.16.123.7/kdb/       imac/
-backup          rsync://172.16.123.7/usb/       imac-usb/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;See the rsnapshot documentation for a complete explanation for each option. The syntax of the configuration can be checked using the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;timemachine% rsnapshot -c /vault/timemachine/etc/rsnapshot-imac.conf configtest
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I&amp;rsquo;ve opted to disable the non-daily backups as they assume that the system being backed up is always available. As this is not the case for me I increased the daily backups to 14. The backup itself is initiated by the following script:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#! /bin/sh
-#
-# Use rsnapshot to create a backup of my iMac.
-
-# Settings
-BASEDIR=/vault/timemachine
-REMOTE_HOST=imac
-REMOTE_DOMAIN=localdomain
-RSNAPSHOT_CONFIG=${BASEDIR}/etc/rsnapshot-${REMOTE_HOST}.conf
-
-# Check if the remote host is on
-/usr/local/sbin/fping -a ${REMOTE_HOST}.${REMOTE_DOMAIN} &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
-if [ $? -ne 0 ]; then
-        echo ${REMOTE_HOST}.${REMOTE_DOMAIN} not online, skipping backup.
-        exit 0
-fi
-
-# Check for required argument
-if [ -z &amp;quot;$1&amp;quot; ]; then
-        echo &amp;quot;Missing required argument (hourly, daily, weekly, monthly), skipping backup.&amp;quot;
-        exit 0
-fi
-
-# Run the backup
-date &amp;quot;+Starting $1 backup: %Y-%m-%d %H:%M:%S&amp;quot;
-/usr/local/bin/rsnapshot -V -c ${RSNAPSHOT_CONFIG} &amp;quot;$1&amp;quot;
-date &amp;quot;+Finished backup: %Y-%m-%d %H:%M:%S&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This script is placed in &lt;code&gt;bin/backup-imac.sh&lt;/code&gt; and executed daily through crontab. The script will check if the remote system is available before the backup is initiated.&lt;/p&gt;
-
-&lt;h3 id=&#34;exclusing-files-from-the-backup&#34;&gt;Exclusing files from the backup&lt;/h3&gt;
-
-&lt;p&gt;In the file &lt;code&gt;etc/excludes-imac.conf&lt;/code&gt; I&amp;rsquo;ve excluded several directories and file types to prevent unwanted files to be backed up. This is based on the exclusions from Apple&amp;rsquo;s Time Machine, Backblaze and personal experiences. Adapt to suite your own needs:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Common file extensions
-*~
-*.appicon
-*.appinfo
-*.cab
-*.cof
-*.cop
-*.cot
-*.dl_
-*.dll
-*.dmg
-*.drk
-*.exe
-*.fdd
-*.hdd
-*.hds
-*.iso
-*.ithmb
-*.log
-*.mem
-*.menudata
-*.msi
-*.nvram
-*.o
-*.ost
-*.part
-*.pva
-*.pvi
-*.pvm
-*.pvs
-*.qtch
-*.sparseimage
-*.sys
-*.vdi
-*.vhd
-*.vmc
-*.vmdk
-*.vmem
-*.vmsd
-*.vmsn
-*.vmss
-*.vmx
-*.vmxf
-*.vo1
-*.vo2
-*.vsv
-*.vud
-*.wab
-*.wim
-
-# Capture One
-/hubiC/Archived/Capture One Sessions/**/Output
-/Pictures/Sessions/**/Output
-
-# 1Password backups and old stuff
-/Documents/1Password/Backups/
-/Library/Application Support/1Password/
-/Library/Application Support/1Password 4/
-
-# Aperture, iPhoto and Photos
-*.aplibrary/Previews
-*.aplibrary/Thumbnails
-*.photolibrary/iPod Photo Cache
-*.photolibrary/Previews
-*.photolibrary/Thumbnails
-*.photoslibrary/Previews
-*.photoslibrary/Thumbnails
-
-# Lightroom
-* Previews.lrdata
-
-# ON1 Photo 10
-/Library/Application Support/ON1/ON1 Photo 10/PerfectBrowseCache/
-
-# Books
-/Documents/Books
-
-# Cache directories
-.[Cc]ache/
-.[Cc]aches/
-[Cc]ache/
-[Cc]aches/
-
-# Trash directories
-.[Tt]rash/
-[Tt]rash/
-
-# Mounted USB disks
-/.DocumentRevisions-V100
-/.Spotlight-V100
-/.TemporaryItems
-/.Trashes
-/.bzvol
-/.fseventsd
-
-# Unwanted stuff
-/.android/avd
-/.dropbox
-/Applications
-/Backup
-/Backups
-/Downloads
-/Dropbox
-/Google Drive
-/Shared
-/Sync
-.DS_Store
-[Tt]mp/
-
-# Node and Bower stuff
-/.node
-/.node-gyp
-/.npm
-node_modules/
-bower_components/
-
-# Application stuff
-/Library/Application Support/ExpanDrive/*/
-/Library/Application Support/Google/Chrome/Safe Browsing*
-/Library/Application Support/SyncServices/*/data.version
-/Library/Logs
-/Library/Mail/V[23]/MailData/Envelope Index
-/Library/Mail/V[23]/MailData/Envelope Index-journal
-/Library/Mail/V[23]/MailData/Envelope Index-shm
-/Library/Mail/V[23]/MailData/Envelope Index-wal
-/Library/Mail/V3/AosIMAP-*/
-/Library/Mail/V3/IMAP-*/
-/Library/Mirrors
-/Library/PubSub/Database
-/Library/PubSub/Downloads
-/Library/PubSub/Feeds
-/Library/Safari/HistoryIndex.sk
-/Library/Safari/Icons.db
-/Library/Safari/WebpageIcons.db
-/Library/Saved Application State
-
-# Multimedia
-/Music/iTunes/Previous iTunes Libraries
-/Music/iTunes/iTunes Media/Mobile Applications
-/Music/iTunes/iTunes Media/Podcasts
-/Music/Subscriptions
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;creating-a-backup&#34;&gt;Creating a backup&lt;/h3&gt;
-
-&lt;p&gt;With the following command we can see what is executed by rsnapshot for a daily backup:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;timemachine% rsnapshot -c etc/rsnapshot-imac.conf -t daily
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To make an actual backup remove the &lt;code&gt;-t&lt;/code&gt; option. Add the &lt;code&gt;-v&lt;/code&gt; option for a more verbose output.&lt;/p&gt;
-
-&lt;h3 id=&#34;automatic-backups&#34;&gt;Automatic backups&lt;/h3&gt;
-
-&lt;p&gt;To create automatic backups we need to create a crontab entry for the backup command. We use our backup script instead of directly calling rsnapshot:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;timemachine% crontab -e
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Add the following lines to start a backup at 3:30AM and mail the output to the given user:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;SHELL=/bin/sh
-PATH=/usr/bin:/bin:/usr/local/bin
-MAILTO=user@example.com
-
-30 3 * * *	/vault/timemachine/bin/backup-imac.sh daily
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -465,28 +54,7 @@ MAILTO=user@example.com
       <guid>https://kdbruin.github.io/2016/10/2016-10-04-homebrew-package-manager/</guid>
       <description>&lt;p&gt;Although macOS comes with a large array of applications and utility programs, several essential developer tools are missing or out of date. Several solutions exist to remedy this and I prefer to use &lt;a href=&#34;http://brew.sh&#34;&gt;Homebrew&lt;/a&gt; to add those programs to the system.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;Installation of Homebrew is very simple. Just execute the following command in a Terminal window:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Follow the directions on the screen and the Homebrew package manager will be installed.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-packages-to-install&#34;&gt;What packages to install?&lt;/h2&gt;
-
-&lt;p&gt;At least the following packages need to be installed:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;homebrew/dupes/rsync&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;wget&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;python&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To keep this website up to date it is also necessary to install the &lt;code&gt;hugo&lt;/code&gt; package.&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -495,8 +63,7 @@ MAILTO=user@example.com
       <pubDate>Sun, 25 Sep 2016 20:43:28 +0200</pubDate>
       
       <guid>https://kdbruin.github.io/contact/</guid>
-      <description>&lt;p&gt;Hier wat contact informatie.&lt;/p&gt;
-</description>
+      <description>Hier wat contact informatie.</description>
     </item>
     
     <item>
@@ -505,8 +72,7 @@ MAILTO=user@example.com
       <pubDate>Sun, 25 Sep 2016 20:42:12 +0200</pubDate>
       
       <guid>https://kdbruin.github.io/about/</guid>
-      <description>&lt;p&gt;Hier een stukje over deze Wiki.&lt;/p&gt;
-</description>
+      <description>Hier een stukje over deze Wiki.</description>
     </item>
     
     <item>
@@ -517,40 +83,7 @@ MAILTO=user@example.com
       <guid>https://kdbruin.github.io/2016/09/2016-09-25-macos-sierra-installation-usb-stick/</guid>
       <description>&lt;p&gt;Having a bootable USB stick with the latest operating system installer ready makes system maintenance a lot easier. Installation on multiple computers requires only a single download of the installer and also a clean install is much easier to perform. In this article I describe how you can create such a bootable USB stick.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;download-the-macos-installer&#34;&gt;Download the macOS installer&lt;/h2&gt;
-
-&lt;p&gt;First download the macOS Sierra Installer from the Mac App Store. When the download is finished the installer will start automatically. Just quit the installation before continuing.&lt;/p&gt;
-
-&lt;h2 id=&#34;prepare-the-usb-stick&#34;&gt;Prepare the USB stick&lt;/h2&gt;
-
-&lt;p&gt;The minimal required size of the USB stick is 8GB. Plug the USB stick into the computer and use Disk Utility to format and name the stick. In this example we will be using &amp;ldquo;os-install&amp;rdquo;.&lt;/p&gt;
-
-&lt;h2 id=&#34;create-the-macos-sierra-bootable-usb-stick&#34;&gt;Create the macOS Sierra bootable USB stick&lt;/h2&gt;
-
-&lt;p&gt;Open a Terminal window and use the following command (on a single line) to place the installation program on the USB stick:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia
-        --volume /Volumes/os-install
-        --applicationpath /Applications/Install\ macOS\ Sierra.app
-        --nointeraction
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;When the process is finished the bootable USB stick with the macOS Sierra installer is ready to use. In Finder the USB stick will be identified as &amp;ldquo;Install macOS Sierra&amp;rdquo;.&lt;/p&gt;
-
-&lt;h2 id=&#34;start-the-installation&#34;&gt;Start the installation&lt;/h2&gt;
-
-&lt;p&gt;To perform a clean install execute the following steps:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Place the USB stick in the computer to update&lt;/li&gt;
-&lt;li&gt;Start the computer keep the &lt;span class=&#34;key&#34;&gt;option&lt;/span&gt; key pressed&lt;/li&gt;
-&lt;li&gt;Choose the bootable USB stick to start the system&lt;/li&gt;
-&lt;li&gt;Choose a clean install&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Source (in Dutch): &lt;a href=&#34;https://www.appletips.nl/bootable-usb-stick-macos-sierra/&#34;&gt;macOS Sierra: Een installatie USB stick maken&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -559,9 +92,7 @@ MAILTO=user@example.com
       <pubDate>Sun, 25 Sep 2016 17:44:05 +0200</pubDate>
       
       <guid>https://kdbruin.github.io/2016/09/2016-09-25-welcome/</guid>
-      <description>&lt;p&gt;Welcome to my personal Wiki. Here you will find lots of stuff about software development,
-operating systems, and other stuff that is of interest to me.&lt;/p&gt;
-</description>
+      <description>Welcome to my personal Wiki. Here you will find lots of stuff about software development, operating systems, and other stuff that is of interest to me.</description>
     </item>
     
   </channel>
