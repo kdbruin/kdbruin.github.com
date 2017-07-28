@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kdbruin.github.io/2017/07/2017-07-28-freebsd-reinstall/</loc>
+    <lastmod>2017-07-28T12:00:50+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kdbruin.github.io/2017/07/2017-07-28-open-with-vscode/</loc>
+    <lastmod>2017-07-28T11:53:26+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kdbruin.github.io/2016/11/2016-11-28-setting-java-home/</loc>
     <lastmod>2016-11-28T20:03:26+01:00</lastmod>
   </url>
@@ -50,13 +60,13 @@
   
   <url>
     <loc>https://kdbruin.github.io/</loc>
-    <lastmod>2016-11-28T20:03:26+01:00</lastmod>
+    <lastmod>2017-07-28T12:00:50+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kdbruin.github.io/post/</loc>
-    <lastmod>2016-11-28T20:03:26+01:00</lastmod>
+    <lastmod>2017-07-28T12:00:50+02:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.25.1" />
 
-  <title>Setting JAVA_HOME Environment Variable &middot; Mijn Wiki</title>
+  <title>Open with Visual Studio Code &middot; Mijn Wiki</title>
 
   
   
@@ -200,7 +200,7 @@
 
 
 <div class="header">
-  <h1>Setting JAVA_HOME Environment Variable</h1>
+  <h1>Open with Visual Studio Code</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -209,7 +209,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>28 Nov 2016, 20:03</time>
+    <time>28 Jul 2017, 11:53</time>
   </div>
 
   
@@ -227,55 +227,38 @@
 </div>
    
 
-  <p>When using Java GUI applications it is necessary to set the <code>JAVA_HOME</code> environment variable. However, when added to either <code>~/.profile</code> or <code>~/.bash_profile</code>, this setting will not be used for GUI applications unless started from a Terminal window.</p>
+  <p>On Windows it is possible to select a file or folder and from the context menu open this in Visual Studio Code. For macOS we need to add this functionality ourselves.</p>
 
 <p></p>
 
-<p>To set the <code>JAVA_HOME</code> environment variable we need to add a LaunchAgent file to start a simple shell script when a user logs in. Place the following lines in <code>~/Library/LaunchAgents/com.user.loginscript.plist</code>:</p>
+<p>However, it is very simple using the following steps:</p>
 
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE plist PUBLIC &quot;-//Apple Computer//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
-&lt;plist version=&quot;1.0&quot;&gt;
-&lt;dict&gt;
-   &lt;key&gt;Label&lt;/key&gt;
-   &lt;string&gt;com.user.loginscript&lt;/string&gt;
-   &lt;key&gt;Program&lt;/key&gt;
-   &lt;string&gt;/path/to/executable/script&lt;/string&gt;
-   &lt;key&gt;RunAtLoad&lt;/key&gt;
-   &lt;true/&gt;
-&lt;/dict&gt;
-&lt;/plist&gt;
-</code></pre>
+<ol>
+<li>Start Automator</li>
+<li>Create a new Service</li>
+<li>Change &ldquo;Service Receives&rdquo; to &ldquo;files or folders&rdquo; in &ldquo;Finder&rdquo;</li>
+<li>Add a &ldquo;Run Shell Script&rdquo; action</li>
+<li>Change &ldquo;Pass input&rdquo; to &ldquo;as arguments&rdquo;</li>
+<li>Paste the following in the shell script box: <code>open -n -b &quot;com.microsoft.VSCode&quot; --args &quot;$*&quot;</code></li>
+<li>Save it as something like &ldquo;Open in Visual Studio Code&rdquo;</li>
+</ol>
 
-<p>In the file change <code>/path/to/executable/script</code> to the actual startup script. In this script place the following lines:</p>
+<p>And that&rsquo;s it.</p>
 
-<pre><code># Set JAVA_HOME is Java is installed
-if [ -x /usr/libexec/java_home ]; then
-  launchctl setenv JAVA_HOME &quot;$(/usr/libexec/java_home)&quot;
-fi
-</code></pre>
-
-<p>Make sure the file is executable.</p>
-
-<p>After the user logs out and in again, open a Terminal window and use</p>
-
-<pre><code>echo $JAVA_HOME
-</code></pre>
-
-<p>to check that the environment variable is set.</p>
+<p>Found this snippet <a href="https://gist.github.com/tonysneed/f9f09bfa28bcf98e8d8306f9b21f99e2">here</a>.</p>
 
   
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://kdbruin.github.io/2016/10/2016-10-23-rsync-backup/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://kdbruin.github.io/2016/11/2016-11-28-setting-java-home/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://kdbruin.github.io/2016/10/2016-10-23-rsync-backup/">Rsync Backup</a>
+      <a href="https://kdbruin.github.io/2016/11/2016-11-28-setting-java-home/">Setting JAVA_HOME Environment Variable</a>
     </nav>
     
   </div>
@@ -285,13 +268,13 @@ fi
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://kdbruin.github.io/2017/07/2017-07-28-open-with-vscode/">Open with Visual Studio Code</a>
+      <a href="https://kdbruin.github.io/2017/07/2017-07-28-freebsd-reinstall/">A Clean Freebsd Install</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://kdbruin.github.io/2017/07/2017-07-28-open-with-vscode/"><i class="fa fa-chevron-right"></i></a>
+    <a href="https://kdbruin.github.io/2017/07/2017-07-28-freebsd-reinstall/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.25.1" />
 
-  <title>Setting JAVA_HOME Environment Variable &middot; Mijn Wiki</title>
+  <title>A Clean Freebsd Install &middot; Mijn Wiki</title>
 
   
   
@@ -200,7 +200,7 @@
 
 
 <div class="header">
-  <h1>Setting JAVA_HOME Environment Variable</h1>
+  <h1>A Clean Freebsd Install</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -209,7 +209,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>28 Nov 2016, 20:03</time>
+    <time>28 Jul 2017, 12:00</time>
   </div>
 
   
@@ -227,55 +227,54 @@
 </div>
    
 
-  <p>When using Java GUI applications it is necessary to set the <code>JAVA_HOME</code> environment variable. However, when added to either <code>~/.profile</code> or <code>~/.bash_profile</code>, this setting will not be used for GUI applications unless started from a Terminal window.</p>
+  <p>After some years of running FreeBSD the system became a bit poluted with packages no longer in use. Also, as there was a new release available (11.0) and I wanted to upgrade my system I decided to do a clean install instead of the in-place upgrade.</p>
 
 <p></p>
 
-<p>To set the <code>JAVA_HOME</code> environment variable we need to add a LaunchAgent file to start a simple shell script when a user logs in. Place the following lines in <code>~/Library/LaunchAgents/com.user.loginscript.plist</code>:</p>
+<h2 id="installation-media">Installation media</h2>
 
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE plist PUBLIC &quot;-//Apple Computer//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
-&lt;plist version=&quot;1.0&quot;&gt;
-&lt;dict&gt;
-   &lt;key&gt;Label&lt;/key&gt;
-   &lt;string&gt;com.user.loginscript&lt;/string&gt;
-   &lt;key&gt;Program&lt;/key&gt;
-   &lt;string&gt;/path/to/executable/script&lt;/string&gt;
-   &lt;key&gt;RunAtLoad&lt;/key&gt;
-   &lt;true/&gt;
-&lt;/dict&gt;
-&lt;/plist&gt;
+<p>Follow the instructions from the <a href="https://www.freebsd.org/doc/handbook/">FreeBSD Handbook</a> to create a USB installation stick. I used the `<code>memstick</code> image.</p>
+
+<h2 id="preparations">Preparations</h2>
+
+<p>Although I wanted to do a clean install I didn&rsquo;t want to loose all my configuration settings. First create snapshots we can send to another ZFS pool:</p>
+
+<pre><code>zfs snapshot -r zroot/ROOT@preupgrade
+zfs snapshot -r zroot/home@preupgrade
 </code></pre>
 
-<p>In the file change <code>/path/to/executable/script</code> to the actual startup script. In this script place the following lines:</p>
+<p>Next, send the snapshots to the backup pool:</p>
 
-<pre><code># Set JAVA_HOME is Java is installed
-if [ -x /usr/libexec/java_home ]; then
-  launchctl setenv JAVA_HOME &quot;$(/usr/libexec/java_home)&quot;
-fi
+<pre><code>zfs send -R zroot/ROOT@preupgrade | zfs receive -F vault/BACKUP-ROOT
+zfs send -R zroot/home@preupgrade | zfs receive -F vault/BACKUP-home
 </code></pre>
 
-<p>Make sure the file is executable.</p>
+<p>Also change the mountpoints so the backups don&rsquo;t mount at the original mountpoints</p>
 
-<p>After the user logs out and in again, open a Terminal window and use</p>
-
-<pre><code>echo $JAVA_HOME
+<pre><code>zfs set -r mountpoint=none vault/BACKUP-ROOT
+zfs set -r mountpoint=none vault/BACKUP-home
 </code></pre>
 
-<p>to check that the environment variable is set.</p>
+<h2 id="freebsd-installation">FreeBSD installation</h2>
+
+<p>Next start the installation and follow the steps from the handbook. For the partitioning I choose the <code>ZFS</code> option. This will create a Root-on-ZFS scheme that allows for easy upgrades using the <code>beadm</code> utility.</p>
+
+<h2 id="system-configuration">System configuration</h2>
+
+<p>After the installation is complete it is time to start installing the necessary packages again. Instead of building from ports I opted to install packages. But instead of downloading these from the official site I used <code>poudriere</code> to build the packages myself so I can still change the default build options. More on this in a next post.</p>
 
   
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://kdbruin.github.io/2016/10/2016-10-23-rsync-backup/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://kdbruin.github.io/2017/07/2017-07-28-open-with-vscode/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://kdbruin.github.io/2016/10/2016-10-23-rsync-backup/">Rsync Backup</a>
+      <a href="https://kdbruin.github.io/2017/07/2017-07-28-open-with-vscode/">Open with Visual Studio Code</a>
     </nav>
     
   </div>
@@ -284,14 +283,8 @@ fi
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://kdbruin.github.io/2017/07/2017-07-28-open-with-vscode/">Open with Visual Studio Code</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://kdbruin.github.io/2017/07/2017-07-28-open-with-vscode/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

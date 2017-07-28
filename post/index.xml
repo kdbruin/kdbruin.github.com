@@ -7,10 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016-2017. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 28 Nov 2016 20:03:26 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 28 Jul 2017 12:00:50 +0200</lastBuildDate>
     
 	<atom:link href="https://kdbruin.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A Clean Freebsd Install</title>
+      <link>https://kdbruin.github.io/2017/07/2017-07-28-freebsd-reinstall/</link>
+      <pubDate>Fri, 28 Jul 2017 12:00:50 +0200</pubDate>
+      
+      <guid>https://kdbruin.github.io/2017/07/2017-07-28-freebsd-reinstall/</guid>
+      <description>&lt;p&gt;After some years of running FreeBSD the system became a bit poluted with packages no longer in use. Also, as there was a new release available (11.0) and I wanted to upgrade my system I decided to do a clean install instead of the in-place upgrade.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Open with Visual Studio Code</title>
+      <link>https://kdbruin.github.io/2017/07/2017-07-28-open-with-vscode/</link>
+      <pubDate>Fri, 28 Jul 2017 11:53:26 +0200</pubDate>
+      
+      <guid>https://kdbruin.github.io/2017/07/2017-07-28-open-with-vscode/</guid>
+      <description>&lt;p&gt;On Windows it is possible to select a file or folder and from the context menu open this in Visual Studio Code. For macOS we need to add this functionality ourselves.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Setting JAVA_HOME Environment Variable</title>
